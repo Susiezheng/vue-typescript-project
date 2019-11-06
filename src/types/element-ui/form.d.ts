@@ -1,4 +1,4 @@
-import { ElementUIComponent, ElementUIComponentSize } from 'element-ui/types/component';
+import {ElementUIComponent, ElementUIComponentSize} from 'element-ui/types/component';
 
 export type FormItemLabelPosition = 'left' | 'right' | 'top';
 

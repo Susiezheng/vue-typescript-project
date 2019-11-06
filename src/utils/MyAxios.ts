@@ -1,6 +1,6 @@
 'use strict';
 import axios from 'axios';
-import { Message } from 'element-ui';
+import {Message} from 'element-ui';
 import _ from 'lodash';
 import loaderJson from './loaderJson';
 import Tools from './Tools';
@@ -55,7 +55,7 @@ class MyAxios {
     }) => {
       if (this.isFailed(res)) {
         // e.response = res;
-        throw new Error(`Request failed with edsp status code ${res.data.code}, reason: ${res.data.msg}'`);
+        throw new Error(`Request failed status code ${res.data.code}, reason: ${res.data.msg}'`);
       } else if (res && !res.isExecuteCallback && callback) {
         const result = callback(res);
         return result || Promise.resolve(res);
@@ -63,7 +63,7 @@ class MyAxios {
         return res.data;
       }
     }).catch((resp: any) => {
-      const { response } = resp;
+      const {response} = resp;
       let errorMessage = '';
       if (response && response.status && (response.status === 401 || response.status === 403)) {
         errorMessage = `error：用户验证失败，将退出重新登录！`;
@@ -87,23 +87,23 @@ class MyAxios {
         return Promise.reject(resp);
       }
     })
-    .catch((res: any) => {
-      const { response } = res;
-      if (response) {
-        Message.error({
-          showClose: true,
-          message: response.data.msg || '系统错误！',
-          type: 'error',
-        });
-      } else {
-        Message({
-          message: res.message,
-          type: 'error',
-          duration: 5 * 1000,
-        });
-      }
-      return Promise.reject(res);
-    });
+      .catch((res: any) => {
+        const {response} = res;
+        if (response) {
+          Message.error({
+            showClose: true,
+            message: response.data.msg || '系统错误！',
+            type: 'error',
+          });
+        } else {
+          Message({
+            message: res.message,
+            type: 'error',
+            duration: 5 * 1000,
+          });
+        }
+        return Promise.reject(res);
+      });
   }
 
   public isFailed(resp: { data: any; }) {
