@@ -1,0 +1,9 @@
+tests
+build
+public
+doc
+node_modules
+src/packages
+#vue.config.js
+.gitlab-ci.yml
+src/assets/font/iconfont

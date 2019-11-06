@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0f0832"],{"9d4e":function(o){o.exports=JSON.parse('[{"proxyUrl":"/book","targetApi":"http://121.36.136.107:8181","protocol":"http://","isModule":false,"notVersion":true,"description":{"zh_CN":"后端代理","en_US":"back-end proxy"}}]')}}]);
+//# sourceMappingURL=chunk-2d0f0832.4b1de0c5.js.map
